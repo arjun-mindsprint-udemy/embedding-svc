@@ -25,7 +25,7 @@ ingress:
   className: "nginx"
   annotations: {}
   hosts:
-    - host: data-prep-svc-dev.test.com
+    - host: embedding-svc-dev.test.com
       paths:
         - path: /
           pathType: Prefix

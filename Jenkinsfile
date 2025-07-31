@@ -7,7 +7,7 @@ pipeline {
         DOCKERHUB_USERNAME = credentials('DOCKERHUB_USERNAME_ARJUN')
         DOCKERHUB_TOKEN = credentials('DOCKERHUB_TOKEN_ARJUN')
         COMMIT_ID = "${env.GIT_COMMIT.take(6)}"
-        APP_NAME = 'data-prep-svc'
+        APP_NAME = 'embedding-svc'
         APP_ENV = 'dev'
         ENABLE_TRIVY = 'false'
         ENABLE_SONARQUBE = 'false'
