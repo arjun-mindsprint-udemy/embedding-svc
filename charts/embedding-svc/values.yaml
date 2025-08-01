@@ -19,11 +19,12 @@ podSecurityContext: {}
 securityContext: {}
 service:
   type: ClusterIP
-  port: 3022
+  port: 3024
 ingress:
   enabled: true
   className: "nginx"
-  annotations: {}
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "10m"
   hosts:
     - host: embedding-svc-dev.test.com
       paths:
