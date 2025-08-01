@@ -4,9 +4,9 @@ metadata:
   name: embedding-svc
   description: Microservice for embedding
   annotations:
-    github.com/project-slug: arjun-mindsprint-udemy/data-prep-svc
+    github.com/project-slug: arjun-mindsprint-udemy/embedding-svc
     backstage.io/techdocs-ref: dir:.
-    jenkins.io/job-full-name: node-app-test-folder/arjun-mindsprint-udemy-repos/data-prep-svc
+    jenkins.io/job-full-name: node-app-test-folder/arjun-mindsprint-udemy-repos/embedding-svc
     grafana/dashboard-selector: "(tags @> 'my-service' || tags @> 'my-service-slo') && tags @> 'generated'"
     prometheus.io/alert: all
     prometheus.io/rule: sum(increase(http_request_total[5m])), memUsage|component,node_memory_active_bytes|instance,sum by (instance) (node_cpu_seconds_total)
