@@ -19,7 +19,7 @@ podSecurityContext: {}
 securityContext: {}
 service:
   type: ClusterIP
-  port: 3024
+  port: 3022
 ingress:
   enabled: true
   className: "nginx"
