@@ -1,8 +1,17 @@
-const OpenAI = require('openai')
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const modelProvider = process.env.MODEL_PROVIDER || 'OpenAI';
+let aiClient;
+
+if (modelProvider.toLowerCase() === 'claude') {
+    // Example: using Anthropic Claude SDK (replace with actual implementation)
+    const { Claude } = require('anthropic'); // or your Claude SDK
+    aiClient = new Claude({ apiKey: process.env.CLAUDE_API_KEY });
+} else {
+    const OpenAI = require('openai');
+    aiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+}
 
 async function embedChunks(chunks) {
-    const result = await openai.embeddings.create({
+    const result = await aiClient.embeddings.create({
         model: 'text-embedding-ada-002',
         input: chunks,
     });
@@ -20,7 +29,7 @@ async function embedChunks(chunks) {
 
 
 async function embedQuery(query) {
-    const result = await openai.embeddings.create({
+    const result = await aiClient.embeddings.create({
         model: 'text-embedding-ada-002',
         input: query,
     });
